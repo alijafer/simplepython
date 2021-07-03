@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 import random
-chars = "abcdefghijklmnopqrstuv@wxyzABCDEFGHIJ#KLMNOPQRSTUVWXYZ1234567890@#$%^&*!(`)"
+chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*!(`)"
 def pas(len):
     password1 = ""
     for  lenw in range(0,len):
@@ -30,15 +30,14 @@ def getInputBoxValuetwo():
             return userInput
         except ValueError:
             userInput = int(1)
-            print("How many passwords would you like text Invalid input")
             return userInput
 
 
 # this is the function called when the button is clicked
 def btnClickFunction():
-    if  getInputBoxValue() != None:
+    if  getInputBoxValue() != None and getInputBoxValue() != 0:
         password_len = getInputBoxValue()
-        if getInputBoxValuetwo() == None:
+        if getInputBoxValuetwo() == None or getInputBoxValuetwo() == 0:
             password_count = 1
         else:
             password_count = getInputBoxValuetwo()
@@ -65,11 +64,9 @@ root.geometry('430x450')
 root.configure(background='#0f7699')
 root.title('Password generator')
 
-
 # This is the section of code which creates a text input box
 tInput=Entry(root)
 tInput.place(x=300, y=50,width=125)
-
 
 # This is the section of code which creates a text input box
 tlnputtwo=Entry(root)
