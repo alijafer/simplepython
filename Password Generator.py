@@ -46,7 +46,9 @@ def btnClickFunction():
         passs = []
         for n_of_run in range(0,password_count):
             #passs.append(pas(password_len)+ '\n')
+            tInout.config(state=tk.NORMAL)
             tInout.insert(END,pas(password_len)+'\n')
+            tInout.config(state=tk.DISABLED)
         #print(passs)
         
 # this is a function to get the user input from the text input box
@@ -59,37 +61,41 @@ def getInputBoxValueout():
 root = Tk()
 
 # This is the section of code which creates the main window
-root.geometry('764x536')
-root.configure(background='#F0F8FF')
+root.geometry('430x450')
+root.configure(background='#0f7699')
 root.title('Password generator')
 
 
 # This is the section of code which creates a text input box
 tInput=Entry(root)
-tInput.place(x=324, y=177)
+tInput.place(x=300, y=50,width=125)
 
 
 # This is the section of code which creates a text input box
 tlnputtwo=Entry(root)
-tlnputtwo.place(x=324, y=215)
+tlnputtwo.place(x=300, y=75,width=125)
 
 
 # This is the section of code which creates a button
-Button(root, text='Generator', bg='#F0F8FF', font=('arial', 12, 'normal'), command=btnClickFunction).place(x=335, y=257)
+Button(root, text='Generator', bg='#ffe161', fg='#0f7699', font=('Cooper', 12, 'normal'), command=btnClickFunction).place(x=5, y=115,width=420,height=40)
+Label(root, text='Password generator', bg='#0f7699', fg='#ffffff', font=('Goudy Stout', 14, 'normal')).place(x=5, y=5)
 
 
 # This is the section of code which creates the a label
-Label(root, text='What length password to be:', bg='#F0F8FF', font=('arial', 12, 'normal')).place(x=112, y=176)
+Label(root, text='What length password to be:', bg='#0f7699', fg='#ffffff', font=('Arial Rounded MT', 12, 'normal')).place(x=5, y=50)
 
 
 # This is the section of code which creates the a label
-Label(root, text='How many passwords would you like:', bg='#F0F8FF', font=('arial', 12, 'normal')).place(x=52, y=215)
+Label(root, text='How many passwords would you like:', bg='#0f7699', fg='#ffffff', font=('Arial Rounded MT', 12, 'normal')).place(x=5, y=75)
 
 
 # This is the section of code which creates a text input box
-tInout=Text(root)
-tInout.place(x=223, y=300,width=282,height=200)
+tInout=Text(root,state='normal')
+tInout.place(x=5, y=170,width=420,height=200)
 
+Label(root, text='GPL-3.0 License', bg='#0f7699', fg='#ffffff', font=('arial', 12, 'normal')).place(x=5, y=400)
+Label(root, text='Creating by Alij', bg='#0f7699', fg='#ffffff', font=('arial', 12, 'normal')).place(x=315, y=400)
 
+Button(root, text='QUIT', bg='#ffe161', fg='#0f7699', font=('arial', 12, 'normal'), command=quit).place(x=200, y=400,width=50)
 
 root.mainloop()
