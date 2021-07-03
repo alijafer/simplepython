@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 import random
+import webbrowser
+
 chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*!(`)"
 def pas(len):
     password1 = ""
@@ -55,6 +57,9 @@ def getInputBoxValueout():
 	userInput = tInout.get()
 	return userInput
 
+def callback(url):
+    webbrowser.open_new(url)
+
 
 
 root = Tk()
@@ -91,8 +96,12 @@ tInout=Text(root,state='normal')
 tInout.place(x=5, y=170,width=420,height=200)
 
 Label(root, text='GPL-3.0 License', bg='#0f7699', fg='#ffffff', font=('arial', 12, 'normal')).place(x=5, y=400)
-Label(root, text='Creating by Alij', bg='#0f7699', fg='#ffffff', font=('arial', 12, 'normal')).place(x=315, y=400)
+link2 = Label(root, text='alij.cc', bg='#0f7699', fg='#ffffff', font=('arial', 12, 'normal'), cursor="hand2")
 
+#link2.place(relx=315, rely=400)
+link2.place(x = 350 ,y = 400)
+#link2.pack()
+link2.bind("<Button-1>", lambda e: callback("https://www.alij.cc"))
 Button(root, text='QUIT', bg='#ffe161', fg='#0f7699', font=('arial', 12, 'normal'), command=quit).place(x=200, y=400,width=50)
 
 root.mainloop()
