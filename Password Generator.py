@@ -8,7 +8,7 @@ def pas(len):
     for  lenw in range(0,len):
         password = random.choice(chars)
         password1 = password1 + password
-    return password1+" "
+    return password1
 
 # this is a function to get the user input from the text input box
 def getInputBoxValue():
@@ -45,9 +45,9 @@ def btnClickFunction():
         #print(type(password_count))
         passs = []
         for n_of_run in range(0,password_count):
-            passs.append(pas(password_len))
-            tInout.insert(INSERT,passs)
-        print(passs)
+            #passs.append(pas(password_len)+ '\n')
+            tInout.insert(END,pas(password_len)+'\n')
+        #print(passs)
         
 # this is a function to get the user input from the text input box
 def getInputBoxValueout():
