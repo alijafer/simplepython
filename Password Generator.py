@@ -96,7 +96,7 @@ tInout=Text(root,state='normal')
 tInout.place(x=5, y=170,width=420,height=200)
 
 Label(root, text='GPL-3.0 License', bg='#0f7699', fg='#ffffff', font=('arial', 12, 'normal')).place(x=5, y=400)
-link2 = Label(root, text='alij.cc', bg='#0f7699', fg='#ffffff', font=('arial', 12, 'normal'), cursor="hand2")
+link2 = Label(root, text=r'alij.cc', bg='#0f7699', fg='#ffffff', font=('arial', 12, 'normal'), cursor="hand2")
 
 #link2.place(relx=315, rely=400)
 link2.place(x = 350 ,y = 400)
